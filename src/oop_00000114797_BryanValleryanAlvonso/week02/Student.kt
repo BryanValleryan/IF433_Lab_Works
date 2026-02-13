@@ -3,7 +3,8 @@ package oop_00000114797_BryanValleryanAlvonso.week02
 class Student(
     val name: String,
     val nim: String,
-    val major: String = "Non-Matriculated"
+    var major: String = "Non-Matriculated",
+    var gpa : Double = 0.0
 ){
     init {
         if(nim.length != 5){
