@@ -10,7 +10,7 @@ fun main() {
     println("masukkan nama: ")
     val name = scanner.nextLine()
 
-    println("Massukan NIM (WAjib 5 karakter): ")
+    println("Massukan NIM (Wajib 5 karakter): ")
     val nim = scanner.nextLine()
 
     scanner.nextLine()
@@ -23,5 +23,6 @@ fun main() {
 
         val s1 = Student(name, nim, major)
         println("Status: pendaftaran  selesai.")
+
     }
 }
