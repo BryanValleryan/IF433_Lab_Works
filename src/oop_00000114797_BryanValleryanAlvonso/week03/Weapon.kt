@@ -6,7 +6,7 @@ class Weapon(
     var damage: Int = 0
         set(value){
             if (value < 0) {
-                println("Damage tidak boleh negati!")
+                println("Damage tidak boleh negatif!")
                 field = value
             }
             if (value > 1000) {
