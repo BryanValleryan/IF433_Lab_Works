@@ -38,12 +38,22 @@ fun main() {
     println()
     println()
 
-    val wallet = EWallet("Bryan", 50000.0)
-    val creditCard = CreditCard("Bryan", 100000.0)
+    val EWallet = EWallet("Bryan", 50000.0)
+    val CreditCard = CreditCard("Bryan", 100000.0)
 
-    val paymentMethods: List<PaymentMethod> = listOf(wallet, creditCard)
+    val paymentMethods: List<PaymentMethod> = listOf(EWallet, CreditCard)
 
     for (payment in paymentMethods) {
         payment.processPayment(75000.0)
+
+        if (payment is EWallet) {
+            println("Melakukan top up otomatis...")
+            payment.topUp(50000.0)
+
+            println("Mencoba transaksi lagi...")
+            payment.processPayment(75000.0)
+        }
+
+        println("----------------------")
     }
 }
