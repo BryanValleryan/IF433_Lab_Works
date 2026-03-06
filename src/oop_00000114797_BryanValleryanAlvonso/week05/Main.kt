@@ -35,4 +35,15 @@ fun main() {
     val luasLingkaran = mathHelper.hitungLuas(7.0)
     println("Luas Lingkaran: $luasLingkaran")
 
+    println()
+    println()
+
+    val wallet = EWallet("Bryan", 50000.0)
+    val creditCard = CreditCard("Bryan", 100000.0)
+
+    val paymentMethods: List<PaymentMethod> = listOf(wallet, creditCard)
+
+    for (payment in paymentMethods) {
+        payment.processPayment(75000.0)
+    }
 }
