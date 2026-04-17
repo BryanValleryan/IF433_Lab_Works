@@ -13,6 +13,13 @@ fun main() {
     for (raw in rawApiData) {
         try {
             parser.parseProduct(raw)?.let { product ->
+                when (product) {
+                    is Product.Electronic ->
+                        println("Produk: ${product.name}, Warranty: ${product.warrantyMonths} bulan")
+
+                    is Product.Clothing ->
+                        println("Produk: ${product.name}, Size: ${product.size}")
+                }
                 parser.checkout(product)
             }
         } catch (e: IllegalArgumentException) {
