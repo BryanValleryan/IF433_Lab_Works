@@ -17,7 +17,7 @@ fun main() {
 
     println(receipt)
 
-    println("\n=== TEST SAFE CASTING ===")
+    println("\n=== TEST SAFE CASTING ====")
     val mixedData: List<Any> = listOf(
         "Smartphone",
         1500000,
