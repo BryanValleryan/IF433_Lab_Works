@@ -53,4 +53,10 @@ fun main() {
     } catch (e: IllegalArgumentException) {
         println(e.message)
     }
+
+
+    println("\n=== TEST JAVA INTEROP ===")
+    val javaRespoonse = LegacyJavaAPI.fetchServerStatus()
+    val statusLength = javaRespoonse!!.length
+    println("Status dari java: $javaRespoonse (Length: $statusLength)")
 }
