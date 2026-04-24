@@ -37,4 +37,5 @@ fun main() {
 
     println("\n--- TRADED PAIRS ---")
     uniquePairs.forEach { println(it) }
+
 }
