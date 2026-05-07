@@ -4,7 +4,7 @@ interface Nameable {
     val name: String
 }
 
-class WalletRepository<T> where T : Nameable {
+class WalletRepository<T> {
 
     private val items = mutableListOf<T>()
 
@@ -18,7 +18,10 @@ class WalletRepository<T> where T : Nameable {
 
     fun searchByName(keyword: String): List<T> {
         return items.filter {
-            it.name.contains(keyword, ignoreCase = true)
+            (it as? Nameable)
+                ?.name
+                ?.contains(keyword, ignoreCase = true)
+                ?: false
         }
     }
 }
