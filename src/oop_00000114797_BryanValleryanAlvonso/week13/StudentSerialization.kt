@@ -12,7 +12,7 @@ fun fromCsv(line: String): Student {
     return Student(parts[0], parts[1].toInt(), parts[2].toDouble())
 }
 
-fun daveStudents(students: List<Student>, path: String) {
+fun saveStudents(students: List<Student>, path: String) {
     File(path).writeText(students.joinToString("\n") {it.toCsv() })
 }
 
@@ -23,4 +23,16 @@ fun loadStudents(path: String): List<Student> {
         println("error: file tidak ditemukan!")
         emptyList()
     }
+}
+
+fun main() {
+    val students = listOf(
+        Student("Alice", 20, 3.8),
+        Student("Bob", 22, 3.5)
+    )
+    saveStudents(students, "student.csv")
+
+    val loaded = loadStudents("student.csv")
+    println("=== LOADED STUDENT DATA ===")
+    loaded.forEach { println(it) }
 }
