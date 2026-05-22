@@ -109,5 +109,5 @@ fun main() {
     loadedData.forEach {
         println(it)
     }
-    println("\n==== TOTAL PnL BERSIH: $totalPnl ====")
+    println("\n==== TOTAL PnL BERSIH: $totalPnl ==== ")
 }
